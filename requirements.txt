@@ -2,6 +2,5 @@ dash
 dash-html-components
 dash-core-components
 pandas
-plotly.graph_objects
 dash.dependencies
 plotly
