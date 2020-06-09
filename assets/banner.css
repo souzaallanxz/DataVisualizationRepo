@@ -1,0 +1,10 @@
+.app_banner{
+    display: flex;
+    justify-content: flex-start;
+    padding: 60px 60px 0px 30px;
+}
+
+.app__banner img{
+    height: 80px;
+    width: auto;
+}
