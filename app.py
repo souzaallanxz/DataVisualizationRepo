@@ -167,7 +167,7 @@ def callback_1(input_value, levels, subjects):
                                  ),
                       xaxis=dict(title='Subjects'),
                       title=dict(
-                          text='Number of courses by subject by year',
+                          text='Number of courses by subject',
                           font=dict(family='Arial', size=18, color='black'),
                           x=.5,
                           y=.9
