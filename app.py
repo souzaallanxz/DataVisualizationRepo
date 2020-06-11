@@ -4,7 +4,7 @@ import dash_html_components as html
 from dash.dependencies import Input, Output
 import plotly.graph_objects as go
 import pandas as pd
-
+import plotly.express as px
 
 # Dataset Processing
 df = pd.read_csv('udemy_courses.csv')
@@ -159,7 +159,8 @@ def callback_1(input_value, levels, subjects):
                     y=v['Count'],
                     x=v['subject'],
                     texttemplate='<b>%{y}</b>',
-                    textposition='outside'
+                    textposition='outside',
+                    marker=dict(color='#c73f36')
                     )
 
     layout_bar = dict(yaxis=dict(range=(0, 2000),
@@ -167,7 +168,7 @@ def callback_1(input_value, levels, subjects):
                                  ),
                       xaxis=dict(title='Subjects'),
                       title=dict(
-                          text='Number of courses by subject',
+                          text='Number of courses by subject by year',
                           font=dict(family='Arial', size=18, color='black'),
                           x=.5,
                           y=.9
@@ -177,8 +178,8 @@ def callback_1(input_value, levels, subjects):
                       plot_bgcolor='rgb(233,233,233)'
                       )
 
-    totalPaid = df[df['is_paid'] == "True"].count()
-    totalFree = df[df['is_paid'] == "False"].count()
+    totalPaid = df_filtered.loc[df_filtered['is_paid'] == 'True'].count()
+    totalFree = df_filtered.loc[df_filtered['is_paid'] == 'False'].count()
 
     listPaid = [totalFree["is_paid"],totalPaid["is_paid"]]
 
@@ -189,7 +190,9 @@ def callback_1(input_value, levels, subjects):
     pie_paid_data = dict(type='pie',
                          labels=pie_paid_labels,
                          values=pie_paid_values,
-                         name='Pie Paid Courses'
+                         name='Pie Paid Courses',
+                         marker=dict(colors = px.colors.sequential.RdBu)
+
                          )
 
     pie_paid_layout = dict(
@@ -211,7 +214,7 @@ def callback_1(input_value, levels, subjects):
 
     x = list(y['Year'])
     y2 = list(y['Count'])
-    ex2_data = dict(type='scatter', x=x, y=y2)
+    ex2_data = dict(type='scatter', x=x, y=y2, marker=dict(color='#c73f36'))
 
     ex2_layout = dict(
             title=dict(
@@ -232,7 +235,7 @@ def callback_1(input_value, levels, subjects):
                     y=v['Count'],
                     mode='markers',
                     marker=dict(size=reviewsTotal['CountReviews'] / 10,
-                                color=[0, 1, 2, 3]),
+                                color=px.colors.sequential.RdBu),
     ))
 
     scatterReviews.update_layout(dict(
