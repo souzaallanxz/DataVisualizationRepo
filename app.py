@@ -63,19 +63,19 @@ app.layout = html.Div(children=[
     ]),
 
     html.Div(className="grid", children=[
-        html.Div(className="filters dd-styles",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
+        html.Div(className="filters dd-styles shadow",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
             html.P(className="indicator", id="totalCourses"),
             html.P('Courses', className="indicator", style={'font-size': '20px', 'margin-top': '0px'})
         ]),  # indicador
-        html.Div(className="filters dd-styles",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
+        html.Div(className="filters dd-styles shadow",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
             html.P(className="indicator", id="maxPrice"),
             html.P('Highest Price', className="indicator", style={'font-size': '20px', 'margin-top': '0px'})
         ]),  # indicador
-        html.Div(className="filters dd-styles",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
+        html.Div(className="filters dd-styles shadow",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
             html.P(id="numLectures", className="indicator"),
             html.P('Lectures', className="indicator", style={'font-size': '20px', 'margin-top': '0px'})
         ]),  # indicador
-        html.Div(className="filters dd-styles",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
+        html.Div(className="filters dd-styles shadow",style={'border-color':'rgba(193, 66, 66, 0.5)'}, children=[
             html.P(id="totalHours", className="indicator"),
             html.P('Total Hours', className="indicator", style={'font-size': '20px', 'margin-top': '0px'})
         ]),  # indicador
